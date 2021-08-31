@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.javanaitei.phoneshop.entity">
+	<class name="Address" table="address">
+		<id name="id" column="id" type="java.lang.Integer">
+			<generator class="native"></generator>
+		</id>
+
+		<property name="country" column="country"
+			type="java.lang.String"></property>
+		<property name="city" column="city"
+			type="java.lang.String"></property>
+		<property name="district" column="district" type="java.lang.String"></property>
+		<property name="ward" column="ward" type="java.lang.String"></property>
+		<property name="address" column="address" type="java.lang.String"></property>
+		
+		<list name="orders" lazy="true" inverse="true">
+			<key column="address_id" />
+			<list-index column="id" base="1" />
+			<one-to-many
+				class="Order" />
+		</list>
+	</class>
+
+</hibernate-mapping>
