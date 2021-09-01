@@ -22,8 +22,8 @@ public class StaticPageController {
         return "pages/contact";
     }
 
-    @GetMapping("/product")
-    public String product() {
-        return "pages/detail";
+    @GetMapping("/checkout")
+    public String checkout() {
+        return "pages/checkout";
     }
 }
