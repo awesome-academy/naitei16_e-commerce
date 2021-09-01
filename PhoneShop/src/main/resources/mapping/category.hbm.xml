@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.javanaitei.phoneshop.entity">
+	<class name="Category"
+		table="category">
+		<id name="id" column="id" type="java.lang.Integer">
+			<generator class="native"></generator>
+		</id>
+
+		<property name="name" column="name" type="java.lang.String"></property>
+		<list name="products" lazy="true" inverse="true">
+			<key column="category_id" />
+			<list-index column="id" base="1" />
+			<one-to-many
+				class="Product" />
+		</list>
+		<many-to-one name="categoryParent"
+			class="Category" column="parent_category_id" not-null="false"/>
+		<list name="categoryChilds" lazy="true" inverse="true">
+			<key column="parent_category_id" />
+			<list-index column="id" base="1" />
+			<one-to-many
+				class="Category" />
+		</list>
+	</class>
+
+</hibernate-mapping>
