@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.javanaitei.phoneshop.entity">
+	<class name="Specifications" table="specifications">
+		<id name="id" column="id" type="java.lang.Integer">
+			<generator class="native"></generator>
+		</id>
+
+		<property name="content" column="content" type="java.lang.String"></property>
+		<property name="name" column="name" type="java.lang.String"></property>
+		<many-to-one name="product"
+			class="Product" column="product_id"
+			not-null="true" />
+	</class>
+
+</hibernate-mapping>
