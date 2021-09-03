@@ -3,19 +3,60 @@ package com.javanaitei.phoneshop.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "product")
 public class Product {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+
+	@Column
 	private String name;
+
+	@Column
 	private float price;
+
+	@Column
 	private float sale;
+
+	@Column(name = "image_url")
 	private String image;
+
+	@Column(name = "image_list")
 	private String images;
+
+	@Column
 	private String consists;
+
+	@Column
 	private String description;
+
+	@Column
 	private Integer amount;
+
+	@ManyToOne
+	@JoinColumn(name = "category_id", nullable = false)
 	private Category category;
+
+	@ManyToOne
+	@JoinColumn(name = "brand_id", nullable = false)
 	private Brand brand;
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
 	private List<Specifications> specifications = new ArrayList<>();
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
 	private List<Reviews> reviews = new ArrayList<>();
 
 	public List<Reviews> getReviews() {
