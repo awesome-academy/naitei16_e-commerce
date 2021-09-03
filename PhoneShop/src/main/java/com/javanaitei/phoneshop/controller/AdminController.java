@@ -1,4 +1,4 @@
-package com.javanaitei.phoneshop.controller.admin;
+package com.javanaitei.phoneshop.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/admin")
 public class AdminController {
     @GetMapping("/dashboard")
-    public String about() {
-        return "admin/dashboard";
+    public String dashboard() {
+        return "auth/order";
     }
 }
