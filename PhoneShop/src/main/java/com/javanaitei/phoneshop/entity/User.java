@@ -3,14 +3,41 @@ package com.javanaitei.phoneshop.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "user")
 public class User {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+
+	@Column(name = "username", nullable = false)
 	private String userName;
+
+	@Column(nullable = false)
 	private String password;
+
+	@Column
 	private String phone;
+
+	@Column
 	private String email;
+
+	@Column
 	private boolean role;
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
 	private List<Reviews> reviews = new ArrayList<>();
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
 	private List<Order> orders = new ArrayList<>();
 
 	public List<Order> getOrders() {

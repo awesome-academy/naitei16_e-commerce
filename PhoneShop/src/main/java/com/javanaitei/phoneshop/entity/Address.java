@@ -3,22 +3,46 @@ package com.javanaitei.phoneshop.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Address {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "adress")
+public class Address {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+
+	@Column
 	private String country;
+
+	@Column
 	private String city;
+
+	@Column
 	private String district;
+
+	@Column
 	private String ward;
+
+	@Column
 	private String address;
-	private List<Order> order =new ArrayList<>();
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "address")
+	private List<Order> orders = new ArrayList<>();
 
 	public List<Order> getOrder() {
-		return order;
+		return orders;
 	}
 
-	public void setOrder(List<Order> order) {
-		this.order = order;
+	public void setOrder(List<Order> orders) {
+		this.orders = orders;
 	}
 
 	public Integer getId() {

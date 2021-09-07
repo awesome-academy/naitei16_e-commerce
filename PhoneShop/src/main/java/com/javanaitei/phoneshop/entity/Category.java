@@ -3,12 +3,36 @@ package com.javanaitei.phoneshop.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "category")
 public class Category {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+
+	@Column
 	private String name;
-	private Category categoryParent;
-	private List<Category> categoryChilds;
+
+	@ManyToOne
+	@JoinColumn(name = "parent_category_id")
+	private Category parentCategory;
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "category")
 	private List<Product> products = new ArrayList<>();
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "parentCategory")
+	private List<Category> categoryChilds = new ArrayList<>();
 
 	public List<Category> getCategoryChilds() {
 		return categoryChilds;
@@ -42,12 +66,12 @@ public class Category {
 		this.name = name;
 	}
 
-	public Category getCategoryParent() {
-		return categoryParent;
+	public Category getParentCategory() {
+		return parentCategory;
 	}
 
-	public void setCategoryParent(Category categoryParent) {
-		this.categoryParent = categoryParent;
+	public void setParentCategory(Category parentCategory) {
+		this.parentCategory = parentCategory;
 	}
 
 }
