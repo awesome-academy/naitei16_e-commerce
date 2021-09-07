@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" th:replace="~{layout/base-layout :: layout(~{::title}, ~{::body}, ~{})}" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>
+        Home
+    </title>
 </head>
-<body>
 
+<body>
+<div class="content-wrapper">
+    <div class="content">
+        <div class="error-wrapper rounded border bg-white px-5">
+            <div class="row justify-content-center">
+                <div class="col-xl-4">
+                    <h1 class="text-primary bold error-title">404</h1>
+                    <p class="pt-4 pb-5 error-subtitle">Looks like something went wrong.</p>
+                    <a href="/PhoneShop_war/" class="btn btn-primary btn-pill">Back to Home</a>
+                </div>
+                <div class="col-xl-6 pt-5 pt-xl-0 text-center">
+                    <img th:src="@{/assets/admin/img/lightenning.png}" class="img-responsive" alt="Error Page Image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
