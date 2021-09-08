@@ -26,4 +26,9 @@ public class StaticPageController {
     public String checkout() {
         return "pages/checkout";
     }
+
+    @GetMapping("/error")
+    public String error() {
+        return "templates/error";
+    }
 }
