@@ -15,6 +15,6 @@
 	<context:annotation-config />
 
 	<context:component-scan
-		base-package="com.javanaitei.phoneshop.controller" />
+		base-package="com.javanaitei.phoneshop" />
 
 </beans>

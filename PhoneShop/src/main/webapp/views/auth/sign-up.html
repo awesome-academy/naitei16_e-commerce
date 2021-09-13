@@ -104,24 +104,37 @@ HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
                 </div>
                 <div class="card-body p-5">
                     <h4 class="text-dark mb-5">Sign Up</h4>
-                    <form action="/PhoneShop_war/">
+                    <form action="/PhoneShop_war/" th:method="POST" th:action="@{/sign-up}" th:object="${user}">
                         <div class="row">
                             <div class="form-group col-md-12 mb-4">
                                 <input
                                         type="text"
                                         class="form-control input-lg"
-                                        id="name"
+                                        id="userName"
+                                        th:field="*{userName}"
                                         aria-describedby="nameHelp"
-                                        placeholder="Name"
+                                        placeholder="User Name"
                                 />
                             </div>
+                            
                             <div class="form-group col-md-12 mb-4">
                                 <input
                                         type="email"
                                         class="form-control input-lg"
                                         id="email"
+                                        th:field="*{email}"
                                         aria-describedby="emailHelp"
-                                        placeholder="Username"
+                                        placeholder="Email"
+                                />
+                            </div>
+                            <div class="form-group col-md-12 mb-4">
+                                <input
+                                        type="text"
+                                        class="form-control input-lg"
+                                        id="phone"
+                                        th:field="*{phone}"
+                                        aria-describedby="nameHelp"
+                                        placeholder="Phone Number"
                                 />
                             </div>
                             <div class="form-group col-md-12">
@@ -129,6 +142,7 @@ HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
                                         type="password"
                                         class="form-control input-lg"
                                         id="password"
+                                        th:field="*{password}"
                                         placeholder="Password"
                                 />
                             </div>
@@ -137,6 +151,7 @@ HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
                                         type="password"
                                         class="form-control input-lg"
                                         id="cpassword"
+                                        th:field="*{confirmPassword}"
                                         placeholder="Confirm Password"
                                 />
                             </div>
