@@ -2,8 +2,51 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/layout-admin/base-admin-layout :: layoutAdmin(~{::title}, ~{::body})}">
 <head>
     <title>Brands</title>
+    <link
+        th:href="@{/assets/admin/css/person.css}"
+        rel="stylesheet"
+    />
 </head>
 <body>
-
+    <div>
+        <div
+                class="
+                    card-header
+                    justify-content-between
+                "
+        >
+            <h2>Brands</h2>
+        </div>
+        <div class="">
+            <div class="card col-sm-3" style="float: left; padding: 10px;">
+                <img th:src="@{/assets/admin/img/brands/apple.png}" alt="brand" style="width:100%">
+                <div class="container">
+                    <h4><b>Apple</b></h4>
+                    <p>America</p>
+                </div>
+            </div>
+            <div class="card col-sm-3" style="float: left; padding: 10px;">
+                <img th:src="@{/assets/admin/img/brands/apple.png}" alt="brand" style="width:100%">
+                <div class="container">
+                    <h4><b>Apple</b></h4>
+                    <p>America</p>
+                </div>
+            </div>
+            <div class="card col-sm-3" style="float: left; padding: 10px;">
+                <img th:src="@{/assets/admin/img/brands/apple.png}" alt="brand" style="width:100%">
+                <div class="container">
+                    <h4><b>Apple</b></h4>
+                    <p>America</p>
+                </div>
+            </div>
+            <div class="card col-sm-3" style="float: left; padding: 10px;">
+                <img th:src="@{/assets/admin/img/brands/apple.png}" alt="brand" style="width:100%">
+                <div class="container">
+                    <h4><b>Apple</b></h4>
+                    <p>America</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

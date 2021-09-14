@@ -1,8 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <html lang="vi" th:fragment="layoutAdmin (title, content)" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title th:replace="${title}">[[#{meta.title}]]</title>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" pageEncoding="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta
             name="viewport"
@@ -118,7 +119,7 @@ HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
                                 data-parent="#sidebar-menu"
                         >
                             <div class="sub-menu">
-                                <li class="active">
+                                <li>
                                     <a
                                             class="sidenav-item-link"
                                             href="/PhoneShop_war/admin/dashboard"
@@ -131,7 +132,7 @@ HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
                             </div>
                         </ul>
                     </li>
-                    <li class="has-sub">
+                    <li class="has-sub active expand">
                         <a
                                 class="sidenav-item-link"
                                 href="javascript:void(0)"
@@ -147,7 +148,7 @@ HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
                             <b class="caret"></b>
                         </a>
                         <ul
-                                class="collapse"
+                                class="collapse show"
                                 id="product"
                                 data-parent="#sidebar-menu"
                         >
@@ -197,7 +198,7 @@ HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
                             </div>
                         </ul>
                     </li>
-                    <li class="has-sub">
+                    <li class="has-sub active expand">
                         <a
                                 class="sidenav-item-link"
                                 href="javascript:void(0)"
@@ -211,7 +212,7 @@ HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
                             <b class="caret"></b>
                         </a>
                         <ul
-                                class="collapse"
+                                class="collapse show"
                                 id="pages"
                                 data-parent="#sidebar-menu"
                         >
@@ -229,7 +230,7 @@ HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
                             </div>
                         </ul>
                     </li>
-                    <li class="has-sub">
+                    <li class="has-sub active expand">
                         <a
                                 class="sidenav-item-link"
                                 href="javascript:void(0)"
@@ -243,7 +244,7 @@ HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
                             <b class="caret"></b>
                         </a>
                         <ul
-                                class="collapse"
+                                class="collapse show"
                                 id="charts"
                                 data-parent="#sidebar-menu"
                         >
@@ -261,7 +262,7 @@ HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
                             </div>
                         </ul>
                     </li>
-                    <li class="has-sub">
+                    <li class="has-sub active expand">
                         <a
                                 class="sidenav-item-link"
                                 href="javascript:void(0)"
@@ -275,7 +276,7 @@ HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
                             <b class="caret"></b>
                         </a>
                         <ul
-                                class="collapse"
+                                class="collapse show"
                                 id="users"
                                 data-parent="#sidebar-menu"
                         >
@@ -358,7 +359,7 @@ HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
                                         alt="User Image"
                                 />
                                 <span class="d-none d-lg-inline-block"
-                                >Trương Văn Hùng</span
+                                >Truong Hung</span
                                 >
                             </button>
                             <ul
@@ -374,7 +375,7 @@ HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
                                             alt="User Image"
                                     />
                                     <div class="d-inline-block">
-                                        Trương Văn Hùng
+                                        Truong Van Hung
                                         <small class="pt-1"
                                         >hungtv@gmail.com</small
                                         >
@@ -382,13 +383,13 @@ HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
                                 </li>
 
                                 <li>
-                                    <a href="user-profile.html">
+                                    <a href="/PhoneShop_war/admin/profile">
                                         <i class="mdi mdi-account"></i>
                                         My Profile
                                     </a>
                                 </li>
                                 <li class="dropdown-footer">
-                                    <a href="signin.html">
+                                    <a href="/PhoneShop_war/sign-in">
                                         <i class="mdi mdi-logout"></i>
                                         Log Out
                                     </a>

@@ -20,7 +20,7 @@ public class productController {
         return "admin/product/product-create";
     }
 
-    @GetMapping("/product/product-detail")
+    @GetMapping("/product/product-detail/{id}")
     public String productDetail() {
         return "admin/product/product-detail";
     }
@@ -31,7 +31,9 @@ public class productController {
     }
 
     @GetMapping("/product/brands")
-    public String brands() {
-        return "admin/product/product-detail";
+    public String brands(Model model) {
+        String[] brands = { "Honda", "BMW", "Ford", "Mazda", "Honda1", "BMW1", "Ford1", "Mazda1", "Honda2", "BMW2", "Ford2", "Mazda2" };
+        model.addAttribute("brands", brands);
+        return "admin/product/brands";
     }
 }
