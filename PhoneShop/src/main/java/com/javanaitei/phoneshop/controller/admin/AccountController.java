@@ -1,6 +1,5 @@
 package com.javanaitei.phoneshop.controller.admin;
 
-import com.javanaitei.phoneshop.service.UserService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,8 +13,6 @@ import java.util.Locale;
 @RequestMapping("/admin/accounts")
 public class AccountController {
 
-    @Autowired
-    private UserService userService;
 
     @GetMapping("/accounts")
     public String users(Model model) {
@@ -26,7 +23,6 @@ public class AccountController {
 
     @GetMapping(value = {"", "/"})
     public String list(Model model) {
-        model.addAttribute("accounts", userService.findAll());
         return "admin/accounts/accounts";
     }
 }
