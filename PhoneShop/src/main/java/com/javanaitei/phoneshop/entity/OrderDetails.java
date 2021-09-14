@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class OrderDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
+	private Long id;
 
 	@ManyToOne
 	@JoinColumn(name = "product_id", nullable = false)
@@ -38,11 +38,11 @@ public class OrderDetails {
 		this.order = order;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

@@ -20,7 +20,7 @@ public class Order {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
+	private Long id;
 
 	@ManyToOne
 	@JoinColumn(name = "user_id", nullable = false)
@@ -53,11 +53,11 @@ public class Order {
 		this.orderDetails = orderDetails;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

@@ -24,3 +24,7 @@ hs_err_pid*
 /.metadata/
 /Servers
 /PhoneShop/.idea
+/PhoneShop/.gitignore
+/PhoneShop/target
+/PhoneShop/src/main/resources/datasources.properties
+/PhoneShop/PhoneShop.iml 
