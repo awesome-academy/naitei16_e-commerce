@@ -17,7 +17,7 @@ import javax.persistence.Table;
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
+	private Long id;
 
 	@Column(name = "username", nullable = false)
 	private String userName;
@@ -32,7 +32,7 @@ public class User {
 	private String email;
 
 	@Column
-	private boolean role;
+	private Integer role;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
 	private List<Reviews> reviews = new ArrayList<>();
@@ -56,11 +56,11 @@ public class User {
 		this.reviews = reviews;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -96,11 +96,11 @@ public class User {
 		this.email = email;
 	}
 
-	public boolean isRole() {
+	public Integer isRole() {
 		return role;
 	}
 
-	public void setRole(boolean role) {
+	public void setRole(Integer role) {
 		this.role = role;
 	}
 

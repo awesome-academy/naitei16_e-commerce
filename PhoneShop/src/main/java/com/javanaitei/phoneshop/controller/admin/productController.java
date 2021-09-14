@@ -35,5 +35,6 @@ public class productController {
         String[] brands = { "Honda", "BMW", "Ford", "Mazda", "Honda1", "BMW1", "Ford1", "Mazda1", "Honda2", "BMW2", "Ford2", "Mazda2" };
         model.addAttribute("brands", brands);
         return "admin/product/brands";
+
     }
 }

@@ -15,6 +15,7 @@ public class orderController {
         return "admin/order/order";
     }
 
+
     @GetMapping("/order/orderDetail/{id}/")
     public String orderDetail() {
         return "admin/order/orderDetail";

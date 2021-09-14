@@ -15,7 +15,9 @@
       <configuration>
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
-        <datasource-mapping />
+        <datasource-mapping>
+          <factory-entry name="PhoneShop" />
+        </datasource-mapping>
         <naming-strategy-map />
       </configuration>
     </facet>
@@ -25,6 +27,7 @@
           <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/configs/applicationContext.xml</file>
           <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/configs/hibernateConfig.xml</file>
           <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/configs/viewConfig.xml</file>
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/configs/securityConfig.xml</file>
         </fileset>
       </configuration>
     </facet>
