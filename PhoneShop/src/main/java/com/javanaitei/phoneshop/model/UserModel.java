@@ -14,8 +14,8 @@ import com.javanaitei.phoneshop.validator.UniqueField;
 @FieldMatch.List({
 		@FieldMatch(first = "password", second = "confirmPassword", message = "{user.validation.password.notmatch}") })
 @UniqueField.List({
-		@UniqueField(field = "email", column = "email", table = "User", message = "{user.validation.email.exist}"),
-		@UniqueField(field = "userName", column = "user_name", table = "User", message = "{user.validation.userName.exist}") })
+		@UniqueField(field = "email", column = "email", table = "user", message = "{user.validation.email.exist}"),
+		@UniqueField(field = "userName", column = "username", table = "user", message = "{user.validation.userName.exist}") })
 @CorrectPassword(name = "oldPassword", message = "{user.validation.oldPassword.incorrect}")
 public class UserModel extends BaseModel {
 

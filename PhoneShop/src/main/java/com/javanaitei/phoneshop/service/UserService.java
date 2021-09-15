@@ -1,10 +1,8 @@
 package com.javanaitei.phoneshop.service;
 
 import java.util.List;
-
 import org.springframework.data.domain.Page;
 import org.springframework.security.core.userdetails.UserDetailsService;
-
 import com.javanaitei.phoneshop.model.UserModel;
 
 public interface UserService extends UserDetailsService {
