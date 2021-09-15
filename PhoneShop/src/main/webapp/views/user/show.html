@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html
+        th:replace="~{layout/base-layout :: layout(~{::title}, ~{::body}, ~{})}"
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title th:text="#{title.users.show}">User Profile</title>
+</head>
+
+<body>
+<h1 style="text-align: center; padding-top: 30px;">Show User Information</h1>
+<div class="container mt-5">
+    <form class="main-body" th:method="GET" th:action="@{'/user/'+${user.id}+'/edit'}" th:object="${user}">
+        <div class="row gutters-sm">
+            <div class="col-md-12">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">User Name</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary" th:text="${user.userName}"/>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Phone Number</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary" th:text="${user.phone}"/>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Email</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary" th:text="${user.email}"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center" th:classappend="!${isCurrentUser} ? 'd-none'">
+                    <button type="submit" class="col-5 btn btn-primary">Edit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
