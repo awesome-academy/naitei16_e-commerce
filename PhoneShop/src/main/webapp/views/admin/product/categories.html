@@ -4,6 +4,71 @@
   <title>Categories</title>
 </head>
 <body>
-
+<div>
+  <div
+    class="
+        card-header
+        justify-content-between
+    "
+  >
+    <h2>Categories</h2>
+  </div>
+  <div class="">
+    <th:block th:each="category : ${categories}">
+      <div class="card col-sm-4 col-md-2" style="float: left; padding: 10px; margin: 10px;">
+        <div
+                class="
+                            dropdown
+                            show
+                            d-inline-block
+                            widget-dropdown
+                        "
+        >
+          <a
+                  class="
+                                dropdown-toggle
+                                icon-burger-mini
+                            "
+                  href="#"
+                  role="button"
+                  id="dropdown-pro"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  data-display="static"
+          >
+          </a>
+          <ul
+                  class="
+                                dropdown-menu
+                                dropdown-menu-left
+                            "
+                  aria-labelledby="dropdown-product"
+          >
+            <li class="dropdown-item">
+              <a href="#"
+              >Edit</a
+              >
+            </li>
+            <li class="dropdown-item">
+              <a href="#"
+              >Delete</a
+              >
+            </li>
+            <li class="dropdown-item">
+              <a href="#"
+              >Detail</a
+              >
+            </li>
+          </ul>
+        </div>
+        <img th:src="@{/assets/admin/img/brands/apple.png}" alt="brand" style="width:100%">
+        <div class="container" style="text-align: center">
+          <h4><b th:text="${category.name}"></b></h4>
+        </div>
+      </div>
+    </th:block>
+  </div>
+</div>
 </body>
 </html>

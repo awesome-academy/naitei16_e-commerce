@@ -8,5 +8,17 @@
 		class="com.javanaitei.phoneshop.dao.impl.UserDAOImpl">
 		<property name="hibernateTemplate" ref="hibernateTemplate" />
 	</bean>
+	<bean id="productDAOImpl" class="com.javanaitei.phoneshop.dao.impl.ProductDAOImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="categoryDAOImpl" class="com.javanaitei.phoneshop.dao.impl.CategoryDAOImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+<!--	<bean id="orderDAOImpl" class="com.javanaitei.phoneshop.dao.impl.OrderDAOImpl">-->
+<!--		<property name="hibernateTemplate" ref="hibernateTemplate" />-->
+<!--	</bean>-->
+<!--	<bean id="orderDetailDAOImpl" class="com.javanaitei.phoneshop.dao.impl.OrderDetailDAOImpl">-->
+<!--		<property name="hibernateTemplate" ref="hibernateTemplate" />-->
+<!--	</bean>-->
 
 </beans>

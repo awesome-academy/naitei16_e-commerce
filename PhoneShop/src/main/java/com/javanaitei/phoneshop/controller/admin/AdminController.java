@@ -12,7 +12,7 @@ import java.util.List;
 @Controller
     @RequestMapping(value={"/admin"}, produces="application/json;charset=UTF-8")
 public class AdminController {
-    @GetMapping("/dashboard")
+    @GetMapping(value = {"/dashboard", "/"})
     public String about() {
         return "admin/dashboard";
     }

@@ -16,68 +16,6 @@
             "
         >
             <h2>Phone list</h2>
-            <div>
-                <button
-                        class="
-                            text-black-50
-                            mr-2
-                            font-size-20
-                        "
-                >
-                    <i class="mdi mdi-cached"></i>
-                </button>
-                <div
-                        class="
-                            dropdown
-                            show
-                            d-inline-block
-                            widget-dropdown
-                        "
-                >
-                    <a
-                            class="
-                                dropdown-toggle
-                                icon-burger-mini
-                            "
-                            href="#"
-                            role="button"
-                            id="dropdown-product"
-                            data-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                            data-display="static"
-                    >
-                    </a>
-                    <ul
-                            class="
-                                dropdown-menu
-                                dropdown-menu-right
-                            "
-                            aria-labelledby="dropdown-product"
-                    >
-                        <li class="dropdown-item">
-                            <a href="#"
-                            >Update Data</a
-                            >
-                        </li>
-                        <li class="dropdown-item">
-                            <a href="#"
-                            >Detailed Log</a
-                            >
-                        </li>
-                        <li class="dropdown-item">
-                            <a href="#"
-                            >Statistics</a
-                            >
-                        </li>
-                        <li class="dropdown-item">
-                            <a href="#"
-                            >Clear Data</a
-                            >
-                        </li>
-                    </ul>
-                </div>
-            </div>
         </div>
         <div class="card-body py-0">
             <th:block th:each="item: ${products}">
@@ -109,26 +47,65 @@
                             text-dark
                             font-weight-medium
                         "
+                        th:text="${item.name}"
                     >
-                        Coach Swagger
                     </h6></a
                     >
                     <p class="float-md-right">
-                        <span class="text-dark mr-2"
-                        >20</span
-                        >Sales
+                        <span class="text-dark mr-2" th:text="${item.amount}"></span
+                        >products
                     </p>
-                    <p class="d-none d-md-block">
-                        Statement belting with
-                        double-turnlock hardware
-                        adds “swagger” to a simple.
-                    </p>
+                    <p class="d-none d-md-block" th:text="${item.description}"></p>
                     <p class="mb-0">
-                        <del>$300</del>
-                        <span class="text-dark ml-3"
-                        >$250</span
-                        >
+                        <del th:text="${item.price}"></del><del>$</del>
+                        <span class="text-dark ml-3" th:text="${item.sale}"></span><span>$</span>
                     </p>
+                </div>
+                <div
+                        class="
+                            dropdown
+                            show
+                            d-inline-block
+                            widget-dropdown
+                        "
+                >
+                    <a
+                            class="
+                                dropdown-toggle
+                                icon-burger-mini
+                            "
+                            href="#"
+                            role="button"
+                            id="dropdown-pro"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            data-display="static"
+                    >
+                    </a>
+                    <ul
+                            class="
+                                dropdown-menu
+                                dropdown-menu-right
+                            "
+                            aria-labelledby="dropdown-product"
+                    >
+                        <li class="dropdown-item">
+                            <a href="#"
+                            >Edit</a
+                            >
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#"
+                            >Delete</a
+                            >
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#"
+                            >Detail</a
+                            >
+                        </li>
+                    </ul>
                 </div>
             </div>
             <th:block>

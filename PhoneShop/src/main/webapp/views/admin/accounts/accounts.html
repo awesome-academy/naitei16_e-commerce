@@ -15,7 +15,7 @@
                 mb-4
             "
     >
-      <h2>Phone list</h2>
+      <h2>List user</h2>
       <div>
         <button
                 class="
@@ -27,12 +27,12 @@
           <i class="mdi mdi-cached"></i>
         </button>
         <div
-                class="
-                            dropdown
-                            show
-                            d-inline-block
-                            widget-dropdown
-                        "
+          class="
+            dropdown
+            show
+            d-inline-block
+            widget-dropdown
+          "
         >
           <a
                   class="
@@ -80,8 +80,9 @@
       </div>
     </div>
     <div class="card-body py-0">
-      <th:block th:each="item: ${accounts}">
-        <div class="media d-flex mb-5">
+      <!--/*@thymesVar id="accounts" type="sun"*/-->
+      <th:block th:each="account : ${accounts}">
+        <div class="media d-flex mb-3 col-md-4 col-sm-6" style="float: left; padding-right: 30px">
           <div
                   class="
                         media-image
@@ -92,8 +93,10 @@
           >
             <a href="#"
             ><img
-                    th:src="@{/assets/admin/img/products/p1.jpg}"
+                    th:src="@{/assets/admin/img/avt.png}"
                     alt="customer image"
+                    th:width="100px"
+                    th:height="100px"
             /></a>
           </div>
           <div
@@ -104,31 +107,17 @@
           >
             <a href="#"
             ><h6
-                    class="
-                            mb-3
-                            text-dark
-                            font-weight-medium
-                        "
+              class="
+                mb-3
+                text-dark
+                font-weight-medium
+              "
+              th:text="${account.userName}"
             >
-              Coach Swagger
-            </h6></a
-            >
-            <p class="float-md-right">
-                        <span class="text-dark mr-2"
-                        >20</span
-                        >Sales
-            </p>
-            <p class="d-none d-md-block">
-              Statement belting with
-              double-turnlock hardware
-              adds “swagger” to a simple.
-            </p>
-            <p class="mb-0">
-              <del>$300</del>
-              <span class="text-dark ml-3"
-              >$250</span
-              >
-            </p>
+            </h6></a>
+            <p class="d-none d-md-block" th:text="${account.email}"></p>
+            <p class="d-none d-md-block" th:text="${account.phone}"></p>
+            <p class="d-none d-md-block" th:text="${account.role == 0 ? 'User' : 'Admin'}"></p>
           </div>
         </div>
         <th:block>

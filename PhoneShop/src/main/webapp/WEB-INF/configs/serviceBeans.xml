@@ -8,4 +8,16 @@
 		class="com.javanaitei.phoneshop.service.impl.UserServiceImpl">
 		<property name="userDAO" ref="userDAOImpl" />
 	</bean>
+	<bean id="productService" class="com.javanaitei.phoneshop.service.impl.ProductServiceImpl">
+		<property name="productDAO" ref="productDAOImpl"/>
+	</bean>
+	<bean id="categoryService" class="com.javanaitei.phoneshop.service.impl.CategoryServiceImpl">
+		<property name="categoryDAO" ref="categoryDAOImpl"/>
+	</bean>
+<!--	<bean id="orderService" class="com.javanaitei.phoneshop.service.impl.OrderServiceImpl">-->
+<!--		<property name="orderDAO" ref="orderDAOImpl"/>-->
+<!--	</bean>-->
+<!--	<bean id="orderDetailService" class="com.javanaitei.phoneshop.service.impl.OrderDetailServiceImpl">-->
+<!--		<property name="orderDetailDAO" ref="orderDetailDAOImpl"/>-->
+<!--	</bean>-->
 </beans>

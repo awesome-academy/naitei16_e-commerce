@@ -115,8 +115,8 @@ public class Product {
 		this.price = price;
 	}
 
-	public float getSale() {
-		return sale;
+	public float getSale(float sale) {
+		return this.sale;
 	}
 
 	public void setSale(float sale) {
